@@ -1,44 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Simple Calculator</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body{
+    }
+    
+    .calculator{
+      display: grid;
+      grid-template-columns: repeat(4, 80px);
+      grid-template-rows: minmax(150px, auto) repeat(4, 80px);
+      grid-gap: 3px;
+      /* border: 2px solid green; */
+    }
+    button{
+      background-color: rgb(225, 220, 220);
+      font-size: 2em;
+    }
+    
+    .output{
+      font-family: monospace;
+      border: 2px solid black;
+      grid-column: 1/-1;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .num1, .num2 {
+      word-wrap: break-word;
+      word-break: break-all;
+      text-align: end;
+      font-size: 3.5em;
+      width: 100%;
+      height: 100%;
+      border: 1px dotted red;
+    }
+
+
+
+  </style>
 </head>
-<body>
-    <div class="calculator">
-        <div class="output">
-            <div data-previous class="previous-num"></div>
-            <div data-after class="second-num"></div>
-        </div>
 
-        <button data-clear>C</button>
-        <button data-delete>Del</button>
-        <button data-operation>%</button>
-        <button data-operation>÷</button>
-        
-        <button data-number>7</button>
-        <button data-number>8</button>
-        <button data-number>9</button>
-        <button data-operation>×</button>
-        
-        <button data-number>4</button>
-        <button data-number>5</button>
-        <button data-number>6</button>
-        <button data-operation>-</button>
-        
-        <button data-number>1</button>
-        <button data-number>2</button>
-        <button data-number>3</button>
-        <button data-operation>+</button>
-        
-        <button data-number class="decimal-btn">.</button>
-        <button data-number>0</button>
-        <button data-equals class="equal-btn">=</button>
-    </div>
+<section class="calculator">
+
+  <div class="output">
+    <div class="num1"></div>
+    <div class="num2"></div>
+  </div>
+
+  <button class="data-number">1</button>
+  <button class="data-number">2</button>
+  <button class="data-number">3</button>
+  <button class="data-operator">÷</button>
+  
+  <button class="data-number">4</button>
+  <button class="data-number">5</button>
+  <button class="data-number">6</button>
+  <button class="data-operator">x</button>
+  
+  <button class="data-number">7</button>
+  <button class="data-number">8</button>
+  <button class="data-number">9</button>
+  <button class="data-operator">-</button>
+  
+  <button class="clear">C</button>
+  <button class="data-number">0</button>
+  <button class="equal">=</button>
+  <button class="data-operator">+</button>
+
+</section>
+
+  <script src="/index.js"></script>
+
 </body>
-
-<script src="index.js"></script>
 </html>
