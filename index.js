@@ -22,6 +22,29 @@ class Calculator {
       this.num1.innerText = num2.innerText.toString() + ' ' +operator;
       this.num2.innerText = '';
     }
+
+    compute(operator) {
+        let answer;
+
+        switch (operator) {
+            case '+': answer = parseFloat(this.num1) + parseFloat(this.num2);
+            break;
+
+            case '-': answer = parseFloat(this.num1) - parseFloat(this.num2);
+            break;
+
+            case 'x': answer = parseFloat(this.num1) * parseFloat(this.num2);
+            break;
+
+            case '÷': answer = parseFloat(this.num1) / parseFloat(this.num2);
+            break;
+        
+            default: alert('enter valid things')
+                break;
+            }
+            return answer;
+        }
+
   }
   
   const numberButton = document.querySelectorAll(".data-number");
@@ -66,3 +89,11 @@ class Calculator {
     });
   });
   
+
+equalButton.addEventListener("click", e => {
+        e.preventDefault();
+        let ans = calculator.compute(operator.innerText);
+        this.num2.innerText = ans;
+        
+        // calculator.updateDisplay();
+    })
